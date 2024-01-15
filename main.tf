@@ -1,12 +1,12 @@
 resource "local_file" "newText" {
-  content  = "This is a new text file"
-  filename = "file.txt"
-  file_permission = "0700"
+  content  = var.content
+  filename = var.filename
+  file_permission = var.file_permission
 }
 
 resource "local_file" "app" {
-  content  = "This is an app file"
-  filename = "app.txt"
+  content  = var.content2
+  filename = var.filename2
 }
 
 resource "random_pet" "pet" {
