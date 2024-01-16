@@ -5,14 +5,10 @@ resource "local_file" "newText" {
 }
 
 resource "local_file" "app" {
-  content  = var.person.name
+  content  = "My app is called ${random_pet.pet.id}"
   filename = var.filename2
 }
 
-resource "local_file" "app" {
-  content  = var.person.name
-  filename = var.filename2
-}
 
 resource "random_pet" "pet" {
   prefix = var.prefix-name[0]
