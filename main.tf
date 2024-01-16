@@ -5,12 +5,17 @@ resource "local_file" "newText" {
 }
 
 resource "local_file" "app" {
-  content  = var.content2
+  content  = var.person.name
+  filename = var.filename2
+}
+
+resource "local_file" "app" {
+  content  = var.person.name
   filename = var.filename2
 }
 
 resource "random_pet" "pet" {
-  prefix = "Mr"
+  prefix = var.prefix-name[0]
   separator = "."
   length = "1"
 }
