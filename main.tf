@@ -7,6 +7,9 @@ resource "local_file" "newText" {
 resource "local_file" "app" {
   content  = "My app is called ${random_pet.pet.id}"
   filename = var.filename2
+
+  depends_on = [ random_pet.pet ]
+
 }
 
 
